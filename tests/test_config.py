@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from diffusion_conductivity import get_replica_specs, load_toml
+from electrolyte_transport import get_replica_specs, load_toml
 
 
 def test_lifsi_example_uses_shared_topology_replicas() -> None:

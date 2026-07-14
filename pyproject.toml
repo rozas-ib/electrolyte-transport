@@ -3,7 +3,7 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "diffusion-conductivity"
+name = "electrolyte-transport"
 version = "0.1.0"
 description = "Helfand--Einstein ionic conductivity analysis for molecular-dynamics trajectories"
 readme = "README.md"
@@ -26,7 +26,7 @@ classifiers = [
 test = ["pytest>=8"]
 
 [project.scripts]
-diffusion-conductivity = "diffusion_conductivity.cli:main"
+electrolyte-transport = "electrolyte_transport.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

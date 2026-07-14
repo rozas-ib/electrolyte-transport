@@ -33,13 +33,13 @@ python -m pip install ".[test]"
 Copy and adapt the example configuration, then run:
 
 ```bash
-diffusion-conductivity my_analysis.toml
+electrolyte-transport my_analysis.toml
 ```
 
 To create a commented configuration template:
 
 ```bash
-diffusion-conductivity --write-template analysis.toml
+electrolyte-transport --write-template analysis.toml
 ```
 
 The analysis writes a timestamped execution log, averaged time-series CSV,
@@ -50,7 +50,7 @@ prefix.
 ## Python API
 
 ```python
-from diffusion_conductivity import run_conductivity_analysis
+from electrolyte_transport import run_conductivity_analysis
 
 summary = run_conductivity_analysis("my_analysis.toml")
 print(summary["conductivity_s_m"])

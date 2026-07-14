@@ -1,4 +1,4 @@
-"""Command-line interface for diffusion-conductivity."""
+"""Command-line interface for electrolyte-transport."""
 
 from .analysis import main as analysis_main
 

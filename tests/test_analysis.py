@@ -1,8 +1,8 @@
 import numpy as np
 import pytest
 
-from diffusion_conductivity import conductivity_from_slope
-from diffusion_conductivity.analysis import convert_conductivity, ensure_odd_window
+from electrolyte_transport import conductivity_from_slope
+from electrolyte_transport.analysis import convert_conductivity, ensure_odd_window
 
 
 def test_conductivity_unit_conversion() -> None:

@@ -9,7 +9,7 @@ transference-number estimates. The expensive lag/origin accumulation is
 vectorized with NumPy and chunked to limit memory use.
 
 Use :func:`run_conductivity_analysis` from Python or the
-``diffusion-conductivity`` command with a TOML configuration file.
+``electrolyte-transport`` command with a TOML configuration file.
 """
 
 import argparse
