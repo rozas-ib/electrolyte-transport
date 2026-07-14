@@ -1,0 +1,30 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+
+# Molecular-dynamics data and generated analysis files
+*.tpr
+*.trr
+*.xtc
+*.xtc_offsets.npz
+*.edr
+*.cpt
+*.dcd
+*.nc
+*.png
+*.log
+*_timeseries_vec_*.csv
+
+# Local settings and editor files
+.env
+*.local.toml
+.ipynb_checkpoints/
+.DS_Store
+*~

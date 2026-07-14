@@ -1,0 +1,64 @@
+# Example LiFSI in DME:TOL configuration for the vectorized analysis engine.
+# Supply matching topology and unwrapped/corrected trajectories before running.
+
+[files]
+# For one trajectory, use:
+# topology = "traj.tpr"
+# trajectory = "traj1.xtc"
+
+# For several replicas sharing one topology, use `trajectories` (plural):
+topology = "traj.tpr"
+trajectories = ["traj1.xtc", "traj2.xtc", "traj3.xtc"]
+
+# Alternative: one topology per replica:
+# topologies = ["replica1.tpr", "replica2.tpr", "replica3.tpr"]
+# trajectories = ["replica1.xtc", "replica2.xtc", "replica3.xtc"]
+
+[system]
+temperature_K = 298.15
+verbose = true
+
+[trajectory]
+start = 0
+stop = -1
+stride = 1
+
+[pbc]
+# Use "none" only for a trajectory already appropriate for diffusion analysis.
+# Other supported values: "unwrap", "nojump", "unwrap+nojump".
+mode = "none"
+make_molecules_whole = false
+
+[charges]
+# The simulation charges were scaled by 0.8; the analysis restores physical
+# charges by dividing topology charges by this factor.
+charge_rescaled_by = 0.8
+
+[ions]
+species = [
+    { name = "Li", selection = "name Li", mode = "atomic" },
+    { name = "FSI", selection = "resname FSI", mode = "com", groupby = "residue" },
+    { name = "DME", selection = "resname DME", mode = "com", groupby = "residue" },
+    { name = "TOL", selection = "resname TOL", mode = "com", groupby = "residue" },
+]
+
+[analysis]
+# Shared manual fit window in lag time (ps).
+fit_start_ps = 15000.0
+fit_end_ps = 25000.0
+local_slope_window_ps = 25000.0
+origin_stride_frames = 1
+max_lag_ps = 1000000.0
+replica_average = "counts"
+origins_chunk = 200
+cation_name = "Li"
+anion_name = "FSI"
+
+[output]
+prefix = "HE"
+time_unit = "ns"
+conductivity_unit = "mS/cm"
+save_replica_csv = true
+save_diffusion_plot = true
+diffusion_unit = "m2/s"
+diffusion_alpha_window_points = 21
