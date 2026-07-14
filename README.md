@@ -1,4 +1,4 @@
-# Diffusion Conductivity
+# Diffusion and conductivity calculations for MD trajectories
 
 Diffusion Conductivity is a Python library and command-line tool for vectorized
 Helfand--Einstein transport analysis of molecular-dynamics trajectories. It
