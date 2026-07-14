@@ -1,7 +1,7 @@
 # Diffusion and conductivity calculations for MD trajectories
 
-Diffusion Conductivity is a Python library and command-line tool for vectorized
-Helfand--Einstein transport analysis of molecular-dynamics trajectories. It
+electrolyte-transport is a Python library and command-line tool for vectorized
+Helfand-Einstein transport analysis of molecular dynamics trajectories. It
 calculates ionic conductivity using multi-time-origin averaging, with total,
 self, distinct, species, and cross contributions.
 
